@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-sand-50: #faf7f2;
+    --color-sand-100: #f3ece1;
+    --color-sand-200: #e6d8c3;
+    --color-sand-300: #d6c2a4;
+    --color-sand-400: #c2a580;
+    --color-sand-500: #a98a63;
+    --color-sand-600: #8c704f;
+    --color-sand-700: #6f5940;
+    --color-sand-800: #564733;
+    --color-sand-900: #3d3325;
+    --color-charcoal: #1c1917;
+    --color-blush: #c98a8a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--color-sand-50);
+    color: var(--color-charcoal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .font-display {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .container-tight {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+  .container-wide {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out both;
+  }
+  .animate-scale-in {
+    animation: scaleIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .animate-shimmer {
+    background: linear-gradient(90deg, #f3ece1 25%, #e6d8c3 37%, #f3ece1 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.4s ease infinite;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-sand-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-sand-400);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-sand-500);
+}
